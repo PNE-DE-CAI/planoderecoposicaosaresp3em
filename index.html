@@ -93,7 +93,6 @@
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
-  /* Alertas e cards */
   .alert {
     display: flex;
     align-items: center;
@@ -226,18 +225,26 @@
   .aula-conteudos li { padding-left: 14px; position: relative; margin-bottom: 2px; }
   .aula-conteudos li::before { content: '›'; position: absolute; left: 0; color: #1565c0; font-weight: 700; }
   .lp-style li::before { color: #b71c1c; }
-  .habs-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+  .habs-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; align-items: center; }
   .hab {
     font-size: 10px;
     font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
     white-space: nowrap;
   }
   .hab.ae-mat { background: #1565c0; color: white; }
   .hab.ae-lp  { background: #b71c1c; color: white; }
   .hab.ef     { background: #e2e8f0; color: #374151; }
   .hab.em     { background: #ede9fe; color: #5b21b6; }
+  .ae-desc {
+    font-size: 10px;
+    color: #334155;
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 16px;
+    display: inline-block;
+  }
   .prioridade-row {
     display: flex;
     align-items: center;
@@ -413,7 +420,7 @@
     </div>
   </div>
 
-  <!-- Conteúdo Matemática -->
+  <!-- MATEMÁTICA -->
   <div class="tab-panel active" id="tab-mat">
     <div class="alert blue">
       <span class="alert-icon">📐</span>
@@ -421,266 +428,195 @@
     </div>
 
     <div class="strategy-grid">
-      <div class="strategy-card sc-red">
-        <div class="sc-label">⚡ Urgência</div>
-        <div class="sc-title">3 semanas = 6 blocos</div>
-        <div class="sc-body">Cada semana tem 2 blocos de 2 aulas cada. Agrupamos conteúdos afins para maximizar cobertura das habilidades da Prova Paulista.</div>
-      </div>
-      <div class="strategy-card sc-gold">
-        <div class="sc-label">🎯 Foco</div>
-        <div class="sc-title">Habilidades de maior incidência</div>
-        <div class="sc-body">MT05, MT06, MT09, MT17 (equações), MT16, MT17 (sistemas), MT23–MT27 (combinatória e probabilidade).</div>
-      </div>
-      <div class="strategy-card sc-mat">
-        <div class="sc-label">📋 Metodologia</div>
-        <div class="sc-title">Revisão + Resolução de problemas</div>
-        <div class="sc-body">Cada bloco combina revisão conceitual rápida com resolução de problemas do estilo SARESP/Prova Paulista.</div>
-      </div>
+      <div class="strategy-card sc-red"><div class="sc-label">⚡ Urgência</div><div class="sc-title">3 semanas = 6 blocos</div><div class="sc-body">Cada semana tem 2 blocos de 2 aulas cada.</div></div>
+      <div class="strategy-card sc-gold"><div class="sc-label">🎯 Foco</div><div class="sc-title">Habilidades de maior incidência</div><div class="sc-body">MT05, MT06, MT09, MT17, MT16, MT23–MT27</div></div>
+      <div class="strategy-card sc-mat"><div class="sc-label">📋 Metodologia</div><div class="sc-title">Revisão + Resolução de problemas</div><div class="sc-body">Cada bloco combina revisão conceitual rápida com problemas estilo SARESP.</div></div>
     </div>
 
     <div class="cobertura-box">
       <h3>📅 Cronograma — Matemática (3/06 a 21/06)</h3>
-      <table class="crono-table">
-        <thead><tr><th>Semana</th><th>Bloco</th><th>Foco</th><th>Habilidades</th><th>Tipo</th></tr></thead>
-        <tbody>
-          <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco A</strong></td><td>Equações 1º e 2º grau · Bhaskara</td><td>3EM.MT05, MT06, MT09, 9EF.MT17</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco B</strong></td><td>Sistemas 2×2 (substituição, adição, geom.)</td><td>3EM.MT16, MT17</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco C</strong></td><td>Sistemas 3×3 · escalonamento · classificação</td><td>3EM.MT17</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco D</strong></td><td>Análise Combinatória: PC, permutação, arranjo, combinação</td><td>3EM.MT23, MT24</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco E</strong></td><td>Probabilidade: espaço amostral, eventos, adição</td><td>3EM.MT25, MT26</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco F</strong></td><td>Probabilidade condicional + Simulado geral</td><td>3EM.MT27</td><td><span class="tipo-badge simulado">simulado</span></td></tr>
-        </tbody>
-       </table>
+      <table class="crono-table"><thead><tr><th>Semana</th><th>Bloco</th><th>Foco</th><th>Habilidades</th><th>Tipo</th></tr></thead>
+      <tbody>
+        <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco A</strong></td><td>Equações 1º e 2º grau</td><td>3EM.MT05, MT06, MT09, 9EF.MT17</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
+        <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco B</strong></td><td>Sistemas 2×2</td><td>3EM.MT16, MT17</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
+        <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco C</strong></td><td>Sistemas 3×3</td><td>3EM.MT17</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
+        <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco D</strong></td><td>Análise Combinatória</td><td>3EM.MT23, MT24</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
+        <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco E</strong></td><td>Probabilidade (eventos, adição)</td><td>3EM.MT25, MT26</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
+        <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco F</strong></td><td>Probabilidade condicional + simulado</td><td>3EM.MT27</td><td><span class="tipo-badge simulado">simulado</span></td></tr>
+      </tbody></table>
     </div>
 
-    <div class="semana-block">
-      <div class="semana-header"><span class="semana-pill s1">Semana 1</span><span class="semana-dates">03 a 07 de junho</span><span class="semana-tag">⚡ Prioridade máxima — Equações e Sistemas 2×2</span></div>
+    <!-- Bloco A -->
+    <div class="semana-block"><div class="semana-header"><span class="semana-pill s1">Semana 1</span><span class="semana-dates">03–07/06</span><span class="semana-tag">Equações e Sistemas 2×2</span></div>
       <div class="aula-grid">
-        <div class="aula-card">
-          <div class="aula-card-header mat"><span class="aula-num-badge">BLOCO A · 2 aulas</span><span class="aula-card-title">Equações polinomiais do 1º e 2º grau</span></div>
+        <div class="aula-card"><div class="aula-card-header mat"><span class="aula-num-badge">BLOCO A · 2 aulas</span><span class="aula-card-title">Equações polinomiais do 1º e 2º grau</span></div>
           <div class="aula-card-body">
             <ul class="aula-conteudos"><li>Equação do 1º grau: ax+b=c</li><li>Equação do 2º grau incompleta</li><li>Fórmula de Bhaskara · Δ</li><li>Problemas cotidianos</li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE1</span><span class="hab ef">EF07MA18</span><span class="hab em">EM13MAT302</span><span class="hab ae-mat">3EM.MT05/06/09</span></div>
-            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span><span style="font-size:11px;">Aulas 1 a 8 do 1º Bim</span></div>
+            <div class="habs-row"><span class="hab ae-mat">AE1</span><span class="ae-desc">Equações polinomiais e problemas</span></div>
+            <div class="habs-row"><span class="hab ef">EF07MA18</span><span class="hab em">EM13MAT302</span><span class="hab ae-mat">3EM.MT05/06/09</span></div>
+            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div>
           </div>
         </div>
-        <div class="aula-card">
-          <div class="aula-card-header mat"><span class="aula-num-badge">BLOCO B · 2 aulas</span><span class="aula-card-title">Sistemas lineares 2×2</span></div>
+        <div class="aula-card"><div class="aula-card-header mat"><span class="aula-num-badge">BLOCO B · 2 aulas</span><span class="aula-card-title">Sistemas lineares 2×2</span></div>
           <div class="aula-card-body">
             <ul class="aula-conteudos"><li>Método da substituição / adição</li><li>Representação geométrica</li><li>Classificação SPD, SPI, SI</li><li>Problemas cotidianos</li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE2</span><span class="hab em">EM13MAT301</span><span class="hab ae-mat">3EM.MT16/MT17</span></div>
-            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span><span style="font-size:11px;">Aulas 9 a 16 do 1º Bim</span></div>
+            <div class="habs-row"><span class="hab ae-mat">AE2</span><span class="ae-desc">Sistemas lineares 2×2</span></div>
+            <div class="habs-row"><span class="hab em">EM13MAT301</span><span class="hab ae-mat">3EM.MT16/MT17</span></div>
+            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="semana-block">
-      <div class="semana-header"><span class="semana-pill s2">Semana 2</span><span class="semana-dates">10 a 14 de junho</span><span class="semana-tag">Sistemas 3×3 e Análise Combinatória</span></div>
+    <!-- Bloco C e D - Semana 2 -->
+    <div class="semana-block"><div class="semana-header"><span class="semana-pill s2">Semana 2</span><span class="semana-dates">10–14/06</span><span class="semana-tag">Sistemas 3×3 e Análise Combinatória</span></div>
       <div class="aula-grid">
-        <div class="aula-card">
-          <div class="aula-card-header gold"><span class="aula-num-badge">BLOCO C · 2 aulas</span><span class="aula-card-title">Sistemas 3×3 · escalonamento</span></div>
+        <div class="aula-card"><div class="aula-card-header gold"><span class="aula-num-badge">BLOCO C · 2 aulas</span><span class="aula-card-title">Sistemas 3×3 · escalonamento</span></div>
           <div class="aula-card-body">
             <ul class="aula-conteudos"><li>Terna ordenada · sistemas equivalentes</li><li>Método do escalonamento</li><li>Classificação SPD/SPI/SI</li><li>Problemas com 3 incógnitas</li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE2</span><span class="hab em">EM13MAT301</span><span class="hab ae-mat">3EM.MT17</span></div>
-            <div class="prioridade-row"><div class="prio-dot media"></div><span>PRIORIDADE MÉDIA</span><span style="font-size:11px;">Aulas 17 a 28 do 1º Bim</span></div>
+            <div class="habs-row"><span class="hab ae-mat">AE2</span><span class="ae-desc">Sistemas lineares 3×3</span></div>
+            <div class="habs-row"><span class="hab em">EM13MAT301</span><span class="hab ae-mat">3EM.MT17</span></div>
+            <div class="prioridade-row"><div class="prio-dot media"></div><span>PRIORIDADE MÉDIA</span></div>
           </div>
         </div>
-        <div class="aula-card">
-          <div class="aula-card-header mat"><span class="aula-num-badge">BLOCO D · 2 aulas</span><span class="aula-card-title">Análise Combinatória</span></div>
+        <div class="aula-card"><div class="aula-card-header mat"><span class="aula-num-badge">BLOCO D · 2 aulas</span><span class="aula-card-title">Análise Combinatória</span></div>
           <div class="aula-card-body">
             <ul class="aula-conteudos"><li>Princípio multiplicativo</li><li>Permutação, arranjo, combinação</li><li>Diferença arranjo × combinação</li><li>Problemas integrados</li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE3</span><span class="hab em">EM13MAT310</span><span class="hab ae-mat">3EM.MT23/MT24</span></div>
-            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span><span style="font-size:11px;">Aulas 1 a 8 do 2º Bim</span></div>
+            <div class="habs-row"><span class="hab ae-mat">AE3</span><span class="ae-desc">Análise Combinatória (PC, permutação, arranjo, combinação)</span></div>
+            <div class="habs-row"><span class="hab em">EM13MAT310</span><span class="hab ae-mat">3EM.MT23/MT24</span></div>
+            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="semana-block">
-      <div class="semana-header"><span class="semana-pill s3">Semana 3</span><span class="semana-dates">17 a 21 de junho</span><span class="semana-tag">🏁 Probabilidade + Simulado final</span></div>
+    <!-- Bloco E e F - Semana 3 -->
+    <div class="semana-block"><div class="semana-header"><span class="semana-pill s3">Semana 3</span><span class="semana-dates">17–21/06</span><span class="semana-tag">🏁 Probabilidade + Simulado final</span></div>
       <div class="aula-grid">
-        <div class="aula-card">
-          <div class="aula-card-header mat"><span class="aula-num-badge">BLOCO E · 2 aulas</span><span class="aula-card-title">Probabilidade: eventos e adição</span></div>
+        <div class="aula-card"><div class="aula-card-header mat"><span class="aula-num-badge">BLOCO E · 2 aulas</span><span class="aula-card-title">Probabilidade: eventos e adição</span></div>
           <div class="aula-card-body">
             <ul class="aula-conteudos"><li>Espaço amostral, eventos simples</li><li>Eventos complementares</li><li>Adição P(A∪B)</li><li>Probabilidade + Análise Combinatória</li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE4/AE5</span><span class="hab em">EM13MAT311/312</span><span class="hab ae-mat">3EM.MT25/MT26</span></div>
-            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span><span style="font-size:11px;">Aulas 9 a 24 do 2º Bim</span></div>
+            <div class="habs-row"><span class="hab ae-mat">AE4</span><span class="ae-desc">Probabilidade – espaço amostral, eventos simples e complementares</span></div>
+            <div class="habs-row"><span class="hab ae-mat">AE5</span><span class="ae-desc">Adição de probabilidades</span></div>
+            <div class="habs-row"><span class="hab em">EM13MAT311/312</span><span class="hab ae-mat">3EM.MT25/MT26</span></div>
+            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div>
           </div>
         </div>
-        <div class="aula-card">
-          <div class="aula-card-header green"><span class="aula-num-badge">BLOCO F · 2 aulas</span><span class="aula-card-title">Probabilidade condicional + Simulado</span></div>
+        <div class="aula-card"><div class="aula-card-header green"><span class="aula-num-badge">BLOCO F · 2 aulas</span><span class="aula-card-title">Probabilidade condicional + Simulado</span></div>
           <div class="aula-card-body">
             <ul class="aula-conteudos"><li>Eventos dependentes/independentes</li><li>P(A|B)</li><li>Multiplicação de probabilidades</li><li><strong>Simulado estilo SARESP</strong></li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE5</span><span class="hab em">EM13MAT312</span><span class="hab ae-mat">3EM.MT27</span></div>
-            <div class="prioridade-row"><div class="prio-dot baixa"></div><span>CONSOLIDAÇÃO</span><span style="font-size:11px;">Aulas 21–28 do 2º Bim</span></div>
+            <div class="habs-row"><span class="hab ae-mat">AE5</span><span class="ae-desc">Multiplicação de probabilidades e probabilidade condicional</span></div>
+            <div class="habs-row"><span class="hab em">EM13MAT312</span><span class="hab ae-mat">3EM.MT27</span></div>
+            <div class="prioridade-row"><div class="prio-dot baixa"></div><span>CONSOLIDAÇÃO</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="cobertura-box">
-      <h3>✅ Habilidades cobertas — Matemática</h3>
-      <div class="hab-grid">
-        <div class="hab-item mat-style"><span class="code">3EM.MT05/06/09</span><span class="desc">Equações 1º e 2º grau</span></div>
-        <div class="hab-item mat-style"><span class="code">3EM.MT16/17</span><span class="desc">Sistemas lineares</span></div>
-        <div class="hab-item mat-style"><span class="code">3EM.MT23/24</span><span class="desc">Análise Combinatória</span></div>
-        <div class="hab-item mat-style"><span class="code">3EM.MT25/26/27</span><span class="desc">Probabilidade (adição, condicional)</span></div>
-      </div>
-    </div>
-
-    <!-- Dicas pedagógicas para Matemática (adicionado) -->
     <div class="dicas-grid">
-      <div class="dica-card">
-        <h4 style="color:#1565c0;">💡 Sugestões de condução</h4>
-        <ul>
-          <li>Inicie cada bloco com uma questão diagnóstica rápida (5 min)</li>
-          <li>Use questões reais do SARESP e Prova Paulista dos últimos anos</li>
-          <li>Alterne exposição com resolução guiada e resolução autônoma</li>
-          <li>Priorize problemas contextualizados em vez de cálculo puro</li>
-          <li>No Bloco A, trabalhe a modelagem de situações reais com equações</li>
-          <li>No Bloco D, use exercícios que exijam interpretar se a ordem importa ou não (arranjo vs combinação)</li>
-        </ul>
-      </div>
-      <div class="dica-card">
-        <h4 style="color:#dc2626;">⚠️ Pontos de atenção</h4>
-        <ul>
-          <li>No Bloco D: distinguir quando usar arranjo vs combinação é o maior erro dos alunos</li>
-          <li>No Bloco E/F: enfatizar o conceito de "sem reposição" (eventos dependentes)</li>
-          <li>Sistemas: treinar a identificação rápida do método mais eficiente para cada problema</li>
-          <li>Bhaskara: reforçar o cálculo do discriminante Δ e interpretação das raízes</li>
-          <li>Probabilidade: muitos alunos confundem P(A∪B) com P(A∩B) — use diagramas de Venn</li>
-          <li>Equações: atenção aos erros de sinal na transposição de termos</li>
-        </ul>
-      </div>
+      <div class="dica-card"><h4 style="color:#1565c0;">💡 Sugestões de condução</h4><ul><li>Inicie cada bloco com uma questão diagnóstica rápida (5 min)</li><li>Use questões reais do SARESP e Prova Paulista</li><li>Priorize problemas contextualizados</li></ul></div>
+      <div class="dica-card"><h4 style="color:#dc2626;">⚠️ Pontos de atenção</h4><ul><li>Bloco D: diferenciar arranjo de combinação é o maior erro</li><li>Bloco E/F: enfatizar "sem reposição"</li><li>Sistemas: identificar método mais eficiente</li></ul></div>
     </div>
   </div>
 
-  <!-- Conteúdo Língua Portuguesa -->
+  <!-- LÍNGUA PORTUGUESA -->
   <div class="tab-panel" id="tab-lp">
     <div class="alert red">
       <span class="alert-icon">📖</span>
-      <span>O SARESP de LP avalia principalmente <strong>leitura e interpretação</strong>. O plano prioriza leitura literária, argumentação, sintaxe e textos jornalísticos.</span>
+      <span>O SARESP de LP avalia principalmente leitura e interpretação. Plano prioriza leitura literária, argumentação, sintaxe e textos jornalísticos.</span>
     </div>
 
     <div class="strategy-grid">
-      <div class="strategy-card sc-red"><div class="sc-label">⚡ Urgência</div><div class="sc-title">6 blocos temáticos</div><div class="sc-body">Conteúdos agrupados por eixo de habilidade, alinhados à Prova Paulista.</div></div>
-      <div class="strategy-card sc-gold"><div class="sc-label">🎯 Foco</div><div class="sc-title">Habilidades de leitura e análise</div><div class="sc-body">LP01–LP05 (leitura), LP12–LP18 (argumentação), LP02/LP04 (sintaxe).</div></div>
-      <div class="strategy-card sc-mat"><div class="sc-label">📋 Metodologia</div><div class="sc-title">Textos + Questões estilo SARESP</div><div class="sc-body">Cada bloco parte de um texto-âncora e desenvolve questões das habilidades cobertas.</div></div>
+      <div class="strategy-card sc-red"><div class="sc-label">⚡ Urgência</div><div class="sc-title">6 blocos temáticos</div><div class="sc-body">Conteúdos agrupados por eixo de habilidade.</div></div>
+      <div class="strategy-card sc-gold"><div class="sc-label">🎯 Foco</div><div class="sc-title">Habilidades de leitura e análise</div><div class="sc-body">LP01–LP05, LP12–LP18, LP02/LP04</div></div>
+      <div class="strategy-card sc-mat"><div class="sc-label">📋 Metodologia</div><div class="sc-title">Textos + Questões estilo SARESP</div><div class="sc-body">Cada bloco parte de um texto-âncora.</div></div>
     </div>
 
     <div class="cobertura-box">
       <h3>📅 Cronograma — Língua Portuguesa (3/06 a 21/06)</h3>
-      <table class="crono-table">
-        <thead><tr><th>Semana</th><th>Bloco</th><th>Foco</th><th>Habilidades</th><th>Tipo</th></tr></thead>
-        <tbody>
-          <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco A</strong></td><td>Leitura literária: inferência, intertextualidade</td><td>LP01, LP03, LP07, LP09, LP10</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco B</strong></td><td>Sintaxe e coesão · figuras de linguagem</td><td>LP02, LP04, 9EF.LP09, 9EF.LP10</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco C</strong></td><td>Texto argumentativo: tese, argumentos</td><td>LP12–LP18</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco D</strong></td><td>Textos jornalísticos: editorial, reportagem</td><td>LP05, LP06, LP11, 9EF.LP01/06</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco E</strong></td><td>Elementos discursivos e modalização</td><td>LP06, LP08, LP09, 9EF.LP07/08</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco F</strong></td><td>Simulado geral estilo SARESP</td><td>Todas as habilidades LP</td><td><span class="tipo-badge simulado">simulado</span></td></tr>
-        </tbody>
-       </table>
+      <table class="crono-table"><thead><tr><th>Semana</th><th>Bloco</th><th>Foco</th><th>Habilidades</th><th>Tipo</th></tr></thead>
+      <tbody>
+        <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco A</strong></td><td>Leitura literária</td><td>LP01, LP03, LP07, LP09, LP10</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
+        <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco B</strong></td><td>Sintaxe e coesão</td><td>LP02, LP04, 9EF.LP09/10</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
+        <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco C</strong></td><td>Texto argumentativo</td><td>LP12–LP18</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
+        <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco D</strong></td><td>Textos jornalísticos</td><td>LP05, LP06, LP11, 9EF.LP01/06</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
+        <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco E</strong></td><td>Elementos discursivos</td><td>LP06, LP08, LP09, 9EF.LP07/08</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
+        <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco F</strong></td><td>Simulado geral</td><td>Todas as habilidades LP</td><td><span class="tipo-badge simulado">simulado</span></td></tr>
+      </tbody></table>
     </div>
 
-    <!-- SEMANA 1 LP -->
-    <div class="semana-block">
-      <div class="semana-header"><span class="semana-pill s1">Semana 1</span><span class="semana-dates">03 a 07 de junho</span><span class="semana-tag">Leitura literária e análise linguística</span></div>
+    <!-- Semana 1 LP -->
+    <div class="semana-block"><div class="semana-header"><span class="semana-pill s1">Semana 1</span><span class="semana-dates">03–07/06</span><span class="semana-tag">Leitura literária e análise linguística</span></div>
       <div class="aula-grid">
-        <div class="aula-card"><div class="aula-card-header lp"><span class="aula-num-badge">BLOCO A</span><span class="aula-card-title">Leitura literária: inferência, intertextualidade</span></div><div class="aula-card-body"><ul class="aula-conteudos lp-style"><li>Leitura de trecho literário (conto, poema)</li><li>Inferência, recursos semânticos</li><li>Intertextualidade · contexto histórico</li></ul><div class="habs-row"><span class="hab ae-lp">AE2/AE3/AE8</span><span class="hab em">EM13LP52</span><span class="hab ae-lp">LP01,LP03,LP07,LP09</span></div><div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div></div></div>
-        <div class="aula-card"><div class="aula-card-header lp"><span class="aula-num-badge">BLOCO B</span><span class="aula-card-title">Sintaxe, coesão e figuras de linguagem</span></div><div class="aula-card-body"><ul class="aula-conteudos lp-style"><li>Conjunções, advérbios, conectivos</li><li>Figuras: metonímia, sinestesia, ironia</li><li>Regência verbal e nominal</li></ul><div class="habs-row"><span class="hab ae-lp">AE7</span><span class="hab em">EM13LP08</span><span class="hab ae-lp">LP02,LP04,9EF.LP09</span></div><div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div></div></div>
-      </div>
-    </div>
-
-    <!-- SEMANA 2 LP -->
-    <div class="semana-block">
-      <div class="semana-header"><span class="semana-pill s2">Semana 2</span><span class="semana-dates">10 a 14 de junho</span><span class="semana-tag">Textos argumentativos e jornalísticos</span></div>
-      <div class="aula-grid">
-        <div class="aula-card">
-          <div class="aula-card-header lp"><span class="aula-num-badge">BLOCO C · 2 aulas</span><span class="aula-card-title">Texto argumentativo: tese, argumentos e modalização</span></div>
+        <div class="aula-card"><div class="aula-card-header lp"><span class="aula-num-badge">BLOCO A</span><span class="aula-card-title">Leitura literária: inferência, intertextualidade</span></div>
           <div class="aula-card-body">
-            <ul class="aula-conteudos lp-style">
-              <li>Reconhecer elementos do artigo de opinião</li>
-              <li>Identificar tese (explícita e implícita) e argumentos</li>
-              <li>Classificar tipos de argumento: autoridade, evidência, exemplificação, comparação, causa/consequência</li>
-              <li>Estratégias de convencimento e movimentos argumentativos</li>
-              <li>Modalização textual: marcas de certeza, dúvida e opinião</li>
-              <li>Distinguir fato de opinião</li>
-            </ul>
-            <div class="habs-row"><span class="hab ae-lp">AE4</span><span class="hab em">EM13LP05</span><span class="hab ae-lp">LP12-LP18</span></div>
-            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span><span style="font-size:11px;">Aulas 4–5 do 1º Bim · Aulas 3,5 do 2º Bim</span></div>
+            <ul class="aula-conteudos lp-style"><li>Leitura de trecho literário (conto, poema)</li><li>Inferência, recursos semânticos</li><li>Intertextualidade · contexto histórico</li></ul>
+            <div class="habs-row"><span class="hab ae-lp">AE2</span><span class="ae-desc">Leitura: inferência e sentido</span><span class="hab ae-lp">AE3</span><span class="ae-desc">Intertextualidade</span><span class="hab ae-lp">AE8</span><span class="ae-desc">Valores culturais e literários</span></div>
+            <div class="habs-row"><span class="hab em">EM13LP52</span><span class="hab ae-lp">LP01,LP03,LP07,LP09</span></div>
+            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div>
           </div>
         </div>
-        <div class="aula-card">
-          <div class="aula-card-header gold"><span class="aula-num-badge">BLOCO D · 2 aulas</span><span class="aula-card-title">Textos jornalísticos, divulgação científica e curadoria</span></div>
+        <div class="aula-card"><div class="aula-card-header lp"><span class="aula-num-badge">BLOCO B</span><span class="aula-card-title">Sintaxe, coesão e figuras de linguagem</span></div>
           <div class="aula-card-body">
-            <ul class="aula-conteudos lp-style">
-              <li>Identificar fato central e circunstâncias em notícias e reportagens</li>
-              <li>Reconhecer elementos do gênero editorial e reportagem</li>
-              <li>Identificar finalidade de texto de divulgação científica</li>
-              <li>Avaliar confiabilidade e fidedignidade de fontes</li>
-              <li>Analisar marcas de parcialidade/imparcialidade</li>
-              <li>Inferir público-alvo e objetivos do enunciador</li>
-            </ul>
-            <div class="habs-row"><span class="hab ae-lp">AE5/AE6</span><span class="hab em">EM13LP42</span><span class="hab ae-lp">LP05,LP06,LP11,9EF.LP01/06</span></div>
-            <div class="prioridade-row"><div class="prio-dot media"></div><span>PRIORIDADE MÉDIA</span><span style="font-size:11px;">Aulas 6–9 e 25–27 do 1º Bim · Aulas 20–23 do 2º Bim</span></div>
+            <ul class="aula-conteudos lp-style"><li>Conjunções, advérbios, conectivos</li><li>Figuras: metonímia, sinestesia, ironia</li><li>Regência verbal e nominal</li></ul>
+            <div class="habs-row"><span class="hab ae-lp">AE7</span><span class="ae-desc">Recursos morfossintáticos, coesão e figuras</span></div>
+            <div class="habs-row"><span class="hab em">EM13LP08</span><span class="hab ae-lp">LP02,LP04,9EF.LP09/10</span></div>
+            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SEMANA 3 LP -->
-    <div class="semana-block">
-      <div class="semana-header"><span class="semana-pill s3">Semana 3</span><span class="semana-dates">17 a 21 de junho</span><span class="semana-tag">🏁 Discurso, modalização + Simulado final</span></div>
+    <!-- Semana 2 LP -->
+    <div class="semana-block"><div class="semana-header"><span class="semana-pill s2">Semana 2</span><span class="semana-dates">10–14/06</span><span class="semana-tag">Textos argumentativos e jornalísticos</span></div>
       <div class="aula-grid">
-        <div class="aula-card">
-          <div class="aula-card-header lp"><span class="aula-num-badge">BLOCO E · 2 aulas</span><span class="aula-card-title">Elementos discursivos: locutor, paráfrase e pressupostos</span></div>
+        <div class="aula-card"><div class="aula-card-header lp"><span class="aula-num-badge">BLOCO C · 2 aulas</span><span class="aula-card-title">Texto argumentativo: tese, argumentos e modalização</span></div>
           <div class="aula-card-body">
-            <ul class="aula-conteudos lp-style">
-              <li>Marcas linguísticas que evidenciam locutor e interlocutor</li>
-              <li>Paráfrases, citações e discurso direto/indireto/indireto livre</li>
-              <li>Inferir informações pressupostas ou subentendidas</li>
-              <li>Variedades linguísticas: norma-padrão e preconceito linguístico</li>
-              <li>Valores culturais e humanos inferidos em textos literários</li>
-            </ul>
-            <div class="habs-row"><span class="hab ae-lp">AE10</span><span class="hab em">EM13LP10</span><span class="hab ae-lp">LP06,LP08,LP09,9EF.LP07/08</span></div>
-            <div class="prioridade-row"><div class="prio-dot media"></div><span>PRIORIDADE MÉDIA</span><span style="font-size:11px;">Aulas 7–8 do 2º Bim · Aulas 17–24 do 1º Bim</span></div>
+            <ul class="aula-conteudos lp-style"><li>Reconhecer elementos do artigo de opinião</li><li>Identificar tese (explícita e implícita)</li><li>Tipos de argumento: autoridade, evidência, exemplificação, comparação, causa/consequência</li><li>Modalização textual e distinção fato/opinião</li></ul>
+            <div class="habs-row"><span class="hab ae-lp">AE4</span><span class="ae-desc">Texto argumentativo: tese, movimentos e recursos persuasivos</span></div>
+            <div class="habs-row"><span class="hab em">EM13LP05/EM13LP02C</span><span class="hab ae-lp">LP12–LP18</span></div>
+            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div>
           </div>
         </div>
-        <div class="aula-card">
-          <div class="aula-card-header green"><span class="aula-num-badge">BLOCO F · 2 aulas</span><span class="aula-card-title">Simulado geral estilo SARESP</span></div>
+        <div class="aula-card"><div class="aula-card-header gold"><span class="aula-num-badge">BLOCO D · 2 aulas</span><span class="aula-card-title">Textos jornalísticos e divulgação científica</span></div>
           <div class="aula-card-body">
-            <ul class="aula-conteudos lp-style">
-              <li><strong>Parte 1 (1 aula):</strong> Questões de leitura literária + análise linguística (Blocos A e B)</li>
-              <li><strong>Parte 2 (1 aula):</strong> Questões argumentativas + jornalísticas + discursivas (Blocos C, D e E)</li>
-              <li>Correção comentada com foco nas habilidades mais erradas</li>
-              <li>Estratégias de leitura rápida para questões dissertativas e objetivas</li>
-            </ul>
-            <div class="habs-row"><span class="hab ae-lp">Todas as AEs LP</span><span class="hab ae-lp">LP01 ao LP18</span><span class="hab ae-lp">9EF.LP01/05-10</span></div>
-            <div class="prioridade-row"><div class="prio-dot baixa"></div><span>CONSOLIDAÇÃO</span><span style="font-size:11px;">Revisão integradora de todo o escopo LP</span></div>
+            <ul class="aula-conteudos lp-style"><li>Identificar fato central em notícias/reportagens</li><li>Gênero editorial e reportagem</li><li>Finalidade de texto de divulgação científica</li><li>Avaliar confiabilidade e parcialidade</li></ul>
+            <div class="habs-row"><span class="hab ae-lp">AE5</span><span class="ae-desc">Textos jornalísticos: fato, circunstâncias, público-alvo</span><span class="hab ae-lp">AE6</span><span class="ae-desc">Curadoria de fontes e divulgação científica</span></div>
+            <div class="habs-row"><span class="hab em">EM13LP42/EM13LP36</span><span class="hab ae-lp">LP05,LP06,LP11,9EF.LP01/06</span></div>
+            <div class="prioridade-row"><div class="prio-dot media"></div><span>PRIORIDADE MÉDIA</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="cobertura-box">
-      <h3>✅ Habilidades cobertas — Língua Portuguesa</h3>
-      <div class="hab-grid">
-        <div class="hab-item lp-style"><span class="code">LP01–LP05</span><span class="desc">Leitura e inferência</span></div>
-        <div class="hab-item lp-style"><span class="code">LP12–LP18</span><span class="desc">Texto argumentativo</span></div>
-        <div class="hab-item lp-style"><span class="code">LP02/LP04</span><span class="desc">Coesão e figuras</span></div>
-        <div class="hab-item lp-style"><span class="code">9EF.LP01/LP06</span><span class="desc">Jornalismo e divulgação científica</span></div>
+    <!-- Semana 3 LP -->
+    <div class="semana-block"><div class="semana-header"><span class="semana-pill s3">Semana 3</span><span class="semana-dates">17–21/06</span><span class="semana-tag">🏁 Discurso, modalização + Simulado final</span></div>
+      <div class="aula-grid">
+        <div class="aula-card"><div class="aula-card-header lp"><span class="aula-num-badge">BLOCO E · 2 aulas</span><span class="aula-card-title">Elementos discursivos: locutor, paráfrase e pressupostos</span></div>
+          <div class="aula-card-body">
+            <ul class="aula-conteudos lp-style"><li>Marcas linguísticas de locutor e interlocutor</li><li>Paráfrases, citações e discurso direto/indireto</li><li>Informações pressupostas e subentendidas</li><li>Variedades linguísticas e norma-padrão</li></ul>
+            <div class="habs-row"><span class="hab ae-lp">AE10</span><span class="ae-desc">Elementos discursivos, paráfrase e pressupostos</span></div>
+            <div class="habs-row"><span class="hab em">EM13LP10/EM13LP52</span><span class="hab ae-lp">LP06,LP08,LP09,9EF.LP07/08</span></div>
+            <div class="prioridade-row"><div class="prio-dot media"></div><span>PRIORIDADE MÉDIA</span></div>
+          </div>
+        </div>
+        <div class="aula-card"><div class="aula-card-header green"><span class="aula-num-badge">BLOCO F · 2 aulas</span><span class="aula-card-title">Simulado geral estilo SARESP</span></div>
+          <div class="aula-card-body">
+            <ul class="aula-conteudos lp-style"><li>Parte 1 (1 aula): leitura literária + análise linguística (Blocos A e B)</li><li>Parte 2 (1 aula): argumentativos + jornalísticos + discursivos (Blocos C, D e E)</li><li>Correção comentada e estratégias de leitura rápida</li></ul>
+            <div class="habs-row"><span class="hab ae-lp">Todas as AEs LP</span><span class="ae-desc">Consolidação integrada</span></div>
+            <div class="prioridade-row"><div class="prio-dot baixa"></div><span>CONSOLIDAÇÃO</span></div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="dicas-grid">
-      <div class="dica-card"><h4 style="color:#b71c1c;">💡 Sugestões de condução</h4><ul><li>Use textos curtos seguidos de questões focadas na habilidade</li><li>No Bloco A, prefira autores do Modernismo (Machado, Drummond)</li><li>No Bloco C, trabalhe com editoriais reais</li><li>Sempre peça ao aluno que justifique a resposta apontando o trecho</li></ul></div>
+      <div class="dica-card"><h4 style="color:#b71c1c;">💡 Sugestões de condução</h4><ul><li>Use textos curtos seguidos de questões focadas na habilidade</li><li>Autores do Modernismo: Machado, Drummond, Guimarães Rosa</li><li>Editoriais reais para análise de argumentação</li></ul></div>
       <div class="dica-card"><h4 style="color:#dc2626;">⚠️ Pontos de atenção</h4><ul><li>LP15 (tese implícita) é uma das habilidades com maior erro</li><li>LP18 (tipos de argumento) exige exemplos variados</li><li>Conjunções adversativas e conclusivas são as mais cobradas</li></ul></div>
     </div>
   </div>
 
-  <footer><i class="fas fa-chalkboard-user"></i> URE Caieiras · Plano de Recomposição SARESP · 3ª Série EM · Cronograma intensivo de 3 semanas</footer>
+  <footer><i class="fas fa-chalkboard-user"></i> URE Caieiras · Plano de Recomposição SARESP · 3ª Série EM</footer>
 </div>
 <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Imprimir / PDF</button>
 
