@@ -3,604 +3,1251 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plano de Recomposição | URE Caieiras · 3ª Série EM</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>Plano de Recomposição SARESP — URE Caieiras · 3ª Série EM</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(145deg, #0a2f6c 0%, #041a3a 100%);
-    min-height: 100vh;
-    padding: 20px;
-    color: #1e293b;
-  }
-  .main-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    background: #0f1a24;
-    border-radius: 48px;
-    padding: 20px;
-    box-shadow: 0 30px 35px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(255, 255, 200, 0.1);
-    border: 1px solid #d32f2f;
-  }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(10, 47, 108, 0.85);
-    backdrop-filter: blur(4px);
-    padding: 12px 24px;
-    border-radius: 60px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  .logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .logo-area img {
-    height: 55px;
-    width: auto;
-    border-radius: 12px;
-    background: white;
-    padding: 4px;
-    object-fit: contain;
-  }
-  .logo-text {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #ffec9e;
-    line-height: 1.3;
-  }
-  .title-badge {
-    background: #d32f2f;
-    color: white;
-    padding: 6px 18px;
-    border-radius: 3rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-size: 0.85rem;
-  }
-  .tabs-wrap {
-    background: #0a2f6c;
-    border-radius: 60px;
-    margin-bottom: 25px;
-    display: inline-flex;
-    padding: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-  .tab-btn {
-    background: transparent;
-    border: none;
-    padding: 10px 28px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border-radius: 60px;
-    color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .tab-btn.active {
-    background: #d32f2f;
-    color: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-  .tab-panel { display: none; }
-  .tab-panel.active { display: block; }
-  .card {
-    background: white;
-    border-radius: 32px;
-    padding: 1.5rem;
-    margin-bottom: 1.8rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    border: 1px solid #e0e4e9;
-  }
-  .alert {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 18px;
-    border-radius: 10px;
-    margin-bottom: 24px;
-    font-size: 13px;
-    font-weight: 600;
-  }
-  .alert.blue { background: #e3f0ff; border-left: 4px solid #1565c0; color: #1e40af; }
-  .alert.red { background: #fef2f2; border-left: 4px solid #dc2626; color: #991b1b; }
-  .strategy-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-bottom: 28px;
-  }
-  .strategy-card {
-    background: white;
-    border-radius: 16px;
-    padding: 16px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  }
-  .strategy-card .sc-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .strategy-card .sc-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .strategy-card .sc-body {
-    font-size: 12px;
-    color: #64748b;
-    line-height: 1.5;
-  }
-  .sc-red .sc-label { color: #dc2626; }
-  .sc-gold .sc-label { color: #d97706; }
-  .sc-mat .sc-label { color: #1565c0; }
-  .semana-block { margin-bottom: 28px; }
-  .semana-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-  }
-  .semana-pill {
-    font-family: 'Syne', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-  .semana-pill.s1 { background: #dc2626; color: white; }
-  .semana-pill.s2 { background: #d97706; color: white; }
-  .semana-pill.s3 { background: #15803d; color: white; }
-  .semana-dates {
-    font-size: 13px;
-    font-weight: 700;
-    color: #1e293b;
-  }
-  .semana-tag {
-    font-size: 11px;
-    color: #475569;
-    background: #e2e8f0;
-    padding: 3px 10px;
-    border-radius: 20px;
-  }
-  .aula-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  .aula-card {
-    background: white;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
-    overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  }
-  .aula-card-header {
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .aula-card-header.mat { background: #e3f0ff; border-bottom: 2px solid #1565c0; }
-  .aula-card-header.lp  { background: #ffeaea; border-bottom: 2px solid #b71c1c; }
-  .aula-card-header.gold { background: #fffbeb; border-bottom: 2px solid #f59e0b; }
-  .aula-card-header.green { background: #f0fdf4; border-bottom: 2px solid #15803d; }
-  .aula-num-badge {
-    font-family: 'Syne', sans-serif;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 3px 8px;
-    border-radius: 5px;
-    white-space: nowrap;
-  }
-  .mat .aula-num-badge { background: #1565c0; color: white; }
-  .lp  .aula-num-badge { background: #b71c1c; color: white; }
-  .gold .aula-num-badge { background: #f59e0b; color: white; }
-  .green .aula-num-badge { background: #15803d; color: white; }
-  .aula-card-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #0f172a;
-  }
-  .aula-card-body { padding: 12px 16px; }
-  .aula-conteudos {
-    font-size: 12px;
-    color: #475569;
-    margin-bottom: 10px;
-    line-height: 1.6;
-    list-style: none;
-    padding-left: 0;
-  }
-  .aula-conteudos li { padding-left: 14px; position: relative; margin-bottom: 2px; }
-  .aula-conteudos li::before { content: '›'; position: absolute; left: 0; color: #1565c0; font-weight: 700; }
-  .lp-style li::before { color: #b71c1c; }
-  .habs-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
-  .hab {
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-  .hab.ae-mat { background: #1565c0; color: white; }
-  .hab.ae-lp  { background: #b71c1c; color: white; }
-  .hab.ef     { background: #e2e8f0; color: #374151; }
-  .hab.em     { background: #ede9fe; color: #5b21b6; }
-  .prioridade-row {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 8px;
-    padding-top: 8px;
-    border-top: 1px dashed #e2e8f0;
-    font-size: 11px;
-  }
-  .prio-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .prio-dot.alta   { background: #dc2626; }
-  .prio-dot.media  { background: #d97706; }
-  .prio-dot.baixa  { background: #15803d; }
-  .cobertura-box {
-    background: white;
-    border-radius: 20px;
-    border: 1px solid #e2e8f0;
-    padding: 20px;
-    margin-bottom: 24px;
-  }
-  .cobertura-box h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 14px;
-  }
-  .hab-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 8px;
-  }
-  .hab-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 8px 10px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    font-size: 11px;
-  }
-  .hab-item .code {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 10px;
-    white-space: nowrap;
-  }
-  .hab-item.mat-style .code { color: #1565c0; }
-  .hab-item.lp-style  .code { color: #b71c1c; }
-  .crono-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-  }
-  .crono-table thead tr { background: #0f172a; color: white; }
-  .crono-table th {
-    padding: 10px 12px;
-    text-align: left;
-    font-family: 'Syne', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-  }
-  .crono-table td {
-    padding: 9px 12px;
-    border-bottom: 1px solid #e2e8f0;
-    vertical-align: top;
-  }
-  .crono-table tr:nth-child(even) td { background: #f8fafc; }
-  .week-cell {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 13px;
-  }
-  .week-cell.s1 { color: #dc2626; }
-  .week-cell.s2 { color: #d97706; }
-  .week-cell.s3 { color: #15803d; }
-  .tipo-badge {
-    display: inline-block;
-    font-size: 9px;
-    font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 10px;
-    text-transform: uppercase;
-  }
-  .tipo-badge.recomp  { background: #fef3c7; color: #92400e; }
-  .tipo-badge.simulado{ background: #d1fae5; color: #065f46; }
-  .dicas-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  .dica-card {
-    background: white;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
-    padding: 14px 16px;
-  }
-  .dica-card h4 {
-    font-family: 'Syne', sans-serif;
-    font-size: 12px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .dica-card ul {
-    list-style: none;
-    font-size: 12px;
-    color: #475569;
-    line-height: 1.7;
-    padding-left: 0;
-  }
-  .dica-card ul li::before { content: '• '; color: #0f172a; font-weight: 700; }
-  .print-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: linear-gradient(135deg, #0a2f6c, #052050);
-    color: white;
-    border: none;
-    border-radius: 60px;
-    padding: 12px 24px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Inter', sans-serif;
-    z-index: 10;
-  }
-  .print-btn:hover { background: #d32f2f; transform: translateY(-2px); }
-  footer {
-    text-align: center;
-    margin-top: 2rem;
-    padding: 1rem;
-    color: #b4c8e0;
-    font-size: 0.8rem;
-    border-top: 1px solid #2c4c6e;
-  }
-  @media (max-width: 700px) {
-    .strategy-grid { grid-template-columns: 1fr; }
-    .aula-grid { grid-template-columns: 1fr; }
-    .dicas-grid { grid-template-columns: 1fr; }
-    .hab-grid { grid-template-columns: 1fr; }
-  }
-  @media print {
-    body { background: white; padding: 0; }
-    .main-container { background: white; padding: 0; box-shadow: none; border: none; }
-    .header, .tabs-wrap, .print-btn { display: none; }
-    .tab-panel { display: block !important; }
-    .tab-btn { display: none; }
-  }
+:root {
+  --mat: #1565c0;
+  --mat-light: #e3f0ff;
+  --mat-mid: #2979d4;
+  --lp: #b71c1c;
+  --lp-light: #ffeaea;
+  --lp-mid: #d32f2f;
+  --gold: #f59e0b;
+  --gold-light: #fffbeb;
+  --green: #15803d;
+  --green-light: #f0fdf4;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --bg: #f8fafc;
+  --white: #ffffff;
+  --urgent: #dc2626;
+  --warn: #d97706;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--ink);
+  color: white;
+  padding: 36px 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(220,38,38,0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: 30%;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(21,101,192,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hero-title {
+  font-family: 'Syne', sans-serif;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+}
+.hero-title h1 {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.hero-title h1 span { color: var(--urgent); }
+.hero-title p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 6px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.countdown-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 16px 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.countdown-box .num {
+  font-family: 'Syne', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--urgent);
+  line-height: 1;
+}
+.countdown-box .label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-top: 4px;
+}
+.countdown-box .date-tag {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* tabs no hero */
+.hero-tabs {
+  display: flex;
+  gap: 0;
+  margin-top: 28px;
+}
+.htab {
+  padding: 12px 32px;
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.htab:hover { color: rgba(255,255,255,0.8); }
+.htab.mat.active { color: #64b5f6; border-bottom-color: #64b5f6; }
+.htab.lp.active  { color: #ef9a9a; border-bottom-color: #ef9a9a; }
+
+/* ── MAIN ── */
+main { max-width: 1080px; margin: 0 auto; padding: 28px 24px 80px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── ALERT BANNER ── */
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.alert.red { background: #fef2f2; border-left: 4px solid var(--urgent); color: #991b1b; }
+.alert.blue { background: var(--mat-light); border-left: 4px solid var(--mat); color: #1e40af; }
+.alert-icon { font-size: 18px; flex-shrink: 0; }
+
+/* ── ESTRATÉGIA BOX ── */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.strategy-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.strategy-card .sc-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.strategy-card .sc-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.strategy-card .sc-body {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.sc-red .sc-label { color: var(--urgent); }
+.sc-gold .sc-label { color: var(--warn); }
+.sc-green .sc-label { color: var(--green); }
+.sc-mat .sc-label { color: var(--mat); }
+
+/* ── SEMANA SECTION ── */
+.semana-block { margin-bottom: 28px; }
+.semana-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.semana-pill {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.semana-pill.s1 { background: var(--urgent); color: white; }
+.semana-pill.s2 { background: var(--warn); color: white; }
+.semana-pill.s3 { background: var(--green); color: white; }
+.semana-dates {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.semana-tag {
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--border);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.semana-line { flex:1; height: 1px; background: var(--border); }
+
+/* ── BLOCO DE AULA AGRUPADA ── */
+.aula-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.aula-card {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.aula-card-header {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.aula-card-header.mat { background: var(--mat-light); border-bottom: 2px solid var(--mat); }
+.aula-card-header.lp  { background: var(--lp-light);  border-bottom: 2px solid var(--lp); }
+.aula-card-header.gold { background: var(--gold-light); border-bottom: 2px solid var(--gold); }
+.aula-card-header.green { background: var(--green-light); border-bottom: 2px solid var(--green); }
+
+.aula-num-badge {
+  font-family: 'Syne', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mat .aula-num-badge { background: var(--mat); color: white; }
+.lp  .aula-num-badge { background: var(--lp); color: white; }
+.gold .aula-num-badge { background: var(--gold); color: white; }
+.green .aula-num-badge { background: var(--green); color: white; }
+
+.aula-card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.aula-card-body {
+  padding: 12px 16px;
+}
+.aula-conteudos {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.aula-conteudos li { list-style: none; padding-left: 14px; position: relative; }
+.aula-conteudos li::before { content: '›'; position: absolute; left: 0; color: var(--mat); font-weight: 700; }
+.lp-style li::before { color: var(--lp); }
+
+.habs-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.hab { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
+.hab.ae-mat { background: var(--mat); color: white; }
+.hab.ae-lp  { background: var(--lp); color: white; }
+.hab.ef     { background: #e2e8f0; color: #374151; }
+.hab.em     { background: #ede9fe; color: #5b21b6; }
+
+.prioridade-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+  font-size: 11px;
+}
+.prio-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.prio-dot.alta   { background: var(--urgent); }
+.prio-dot.media  { background: var(--warn); }
+.prio-dot.baixa  { background: var(--green); }
+.prio-label { font-weight: 700; color: var(--muted); }
+
+/* ── HABILIDADES COBERTURA ── */
+.cobertura-box {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.cobertura-box h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+.hab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+}
+.hab-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 11px;
+  line-height: 1.4;
+}
+.hab-item .code {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.hab-item.mat-style .code { color: var(--mat); }
+.hab-item.lp-style  .code { color: var(--lp); }
+.hab-item .desc { color: var(--muted); }
+
+/* ── CRONOGRAMA VISUAL ── */
+.crono-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-bottom: 24px;
+}
+.crono-table thead tr { background: var(--ink); color: white; }
+.crono-table th {
+  padding: 10px 12px;
+  text-align: left;
+  font-family: 'Syne', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.crono-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.crono-table tr:nth-child(even) td { background: #f8fafc; }
+.crono-table tr:hover td { background: #f1f5f9; }
+.crono-table .week-cell {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.crono-table .week-cell.s1 { color: var(--urgent); }
+.crono-table .week-cell.s2 { color: var(--warn); }
+.crono-table .week-cell.s3 { color: var(--green); }
+.crono-table .focus-cell { font-weight: 700; color: var(--ink); }
+.crono-table .habs-cell { color: var(--muted); }
+.crono-table .aulas-cell {
+  font-size: 10px;
+  color: var(--muted);
+}
+.crono-table .tipo-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tipo-badge.revisao { background: #ede9fe; color: #5b21b6; }
+.tipo-badge.recomp  { background: #fef3c7; color: #92400e; }
+.tipo-badge.simulado{ background: #d1fae5; color: #065f46; }
+.tipo-badge.verif   { background: #fee2e2; color: #991b1b; }
+
+/* ── DICAS BOX ── */
+.dicas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.dica-card {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+}
+.dica-card h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dica-card ul {
+  list-style: none;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.dica-card ul li::before { content: '• '; color: var(--ink); font-weight: 700; }
+
+/* PRINT */
+@media print {
+  .hero-tabs, body > * > .htab { display: none; }
+  .tab-panel { display: block !important; page-break-before: always; }
+  .tab-panel:first-of-type { page-break-before: avoid; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-btn { display: none !important; }
+}
+
+.print-btn {
+  position: fixed; bottom: 24px; right: 24px;
+  background: var(--ink); color: white;
+  border: none; border-radius: 50px;
+  padding: 12px 22px;
+  font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700;
+  cursor: pointer; letter-spacing: 0.05em;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  display: flex; align-items: center; gap: 8px;
+  transition: transform 0.15s;
+}
+.print-btn:hover { transform: translateY(-2px); }
+
+@media (max-width: 680px) {
+  .strategy-grid { grid-template-columns: 1fr; }
+  .aula-grid { grid-template-columns: 1fr; }
+  .dicas-grid { grid-template-columns: 1fr; }
+  .hero { padding: 24px 20px 0; }
+  .hero-title h1 { font-size: 22px; }
+}
 </style>
 </head>
 <body>
-<div class="main-container">
-  <div class="header">
-    <div class="logo-area">
-      <img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC São Paulo">
-      <div class="logo-text">URE CAIEIRAS - Seduc SP<br>Plano de Recomposição Curricular</div>
-    </div>
-    <div class="title-badge"><i class="fas fa-chalkboard-user"></i> 3ª Série EM · SARESP 2026</div>
-  </div>
 
-  <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-    <div class="tabs-wrap">
-      <button class="tab-btn active" onclick="switchTab('mat')"><i class="fas fa-calculator"></i> Matemática</button>
-      <button class="tab-btn" onclick="switchTab('lp')"><i class="fas fa-book-open"></i> Língua Portuguesa</button>
-    </div>
-  </div>
-
-  <!-- Painel Matemática -->
-  <div class="tab-panel active" id="tab-mat">
-    <div class="alert blue">
-      <span class="alert-icon">📐</span>
-      <span>Com apenas 3 semanas, o foco deve ser nos agrupamentos de maior peso no SARESP: <strong>Equações e Sistemas (AE1/AE2)</strong> e <strong>Combinatória + Probabilidade (AE3/AE4/AE5)</strong>.</span>
-    </div>
-
-    <div class="strategy-grid">
-      <div class="strategy-card sc-red">
-        <div class="sc-label">⚡ Urgência</div>
-        <div class="sc-title">3 semanas = 6 blocos</div>
-        <div class="sc-body">Cada semana tem 2 blocos de 2 aulas cada. Agrupamos conteúdos afins para maximizar cobertura das habilidades da Prova Paulista.</div>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="hero-title">
+        <div class="hero-eyebrow">URE Caieiras · Ensino Médio · 3ª Série · 2026</div>
+        <h1>Plano de <span>Recomposição</span><br>Curricular</h1>
+        <p>Cronograma estratégico com agrupamento de conteúdos · Foco nas habilidades do SARESP</p>
       </div>
-      <div class="strategy-card sc-gold">
-        <div class="sc-label">🎯 Foco</div>
-        <div class="sc-title">Habilidades de maior incidência</div>
-        <div class="sc-body">MT05, MT06, MT09, MT17 (equações), MT16, MT17 (sistemas), MT23–MT27 (combinatória e probabilidade).</div>
-      </div>
-      <div class="strategy-card sc-mat">
-        <div class="sc-label">📋 Metodologia</div>
-        <div class="sc-title">Revisão + Resolução de problemas</div>
-        <div class="sc-body">Cada bloco combina revisão conceitual rápida com resolução de problemas do estilo SARESP/Prova Paulista.</div>
+      <div class="countdown-box">
+        <div class="num">20</div>
+        <div class="label">dias restantes</div>
+        <div class="date-tag">📅 SARESP: 23/06/2026</div>
       </div>
     </div>
-
-    <div class="cobertura-box">
-      <h3>📅 Cronograma — Matemática (3/06 a 21/06)</h3>
-      <table class="crono-table">
-        <thead><tr><th>Semana</th><th>Bloco</th><th>Foco</th><th>Habilidades</th><th>Tipo</th></tr></thead>
-        <tbody>
-          <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco A</strong></td><td>Equações 1º e 2º grau · Bhaskara</td><td>3EM.MT05, MT06, MT09, 9EF.MT17</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco B</strong></td><td>Sistemas 2×2 (substituição, adição, geom.)</td><td>3EM.MT16, MT17</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco C</strong></td><td>Sistemas 3×3 · escalonamento · classificação</td><td>3EM.MT17</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco D</strong></td><td>Análise Combinatória: PC, permutação, arranjo, combinação</td><td>3EM.MT23, MT24</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco E</strong></td><td>Probabilidade: espaço amostral, eventos, adição</td><td>3EM.MT25, MT26</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco F</strong></td><td>Probabilidade condicional + Simulado geral</td><td>3EM.MT27</td><td><span class="tipo-badge simulado">simulado</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Semana 1 detalhada -->
-    <div class="semana-block">
-      <div class="semana-header"><span class="semana-pill s1">Semana 1</span><span class="semana-dates">03 a 07 de junho</span><span class="semana-tag">⚡ Prioridade máxima — Equações e Sistemas 2×2</span></div>
-      <div class="aula-grid">
-        <div class="aula-card">
-          <div class="aula-card-header mat"><span class="aula-num-badge">BLOCO A · 2 aulas</span><span class="aula-card-title">Equações polinomiais do 1º e 2º grau</span></div>
-          <div class="aula-card-body">
-            <ul class="aula-conteudos"><li>Equação do 1º grau: ax+b=c</li><li>Equação do 2º grau incompleta</li><li>Fórmula de Bhaskara · Δ</li><li>Problemas cotidianos</li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE1</span><span class="hab ef">EF07MA18</span><span class="hab em">EM13MAT302</span><span class="hab ae-mat">3EM.MT05/06/09</span></div>
-            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span><span style="font-size:11px;">Aulas 1 a 8 do 1º Bim</span></div>
-          </div>
-        </div>
-        <div class="aula-card">
-          <div class="aula-card-header mat"><span class="aula-num-badge">BLOCO B · 2 aulas</span><span class="aula-card-title">Sistemas lineares 2×2</span></div>
-          <div class="aula-card-body">
-            <ul class="aula-conteudos"><li>Método da substituição / adição</li><li>Representação geométrica</li><li>Classificação SPD, SPI, SI</li><li>Problemas cotidianos</li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE2</span><span class="hab em">EM13MAT301</span><span class="hab ae-mat">3EM.MT16/MT17</span></div>
-            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span><span style="font-size:11px;">Aulas 9 a 16 do 1º Bim</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="semana-block">
-      <div class="semana-header"><span class="semana-pill s2">Semana 2</span><span class="semana-dates">10 a 14 de junho</span><span class="semana-tag">Sistemas 3×3 e Análise Combinatória</span></div>
-      <div class="aula-grid">
-        <div class="aula-card">
-          <div class="aula-card-header gold"><span class="aula-num-badge">BLOCO C · 2 aulas</span><span class="aula-card-title">Sistemas 3×3 · escalonamento</span></div>
-          <div class="aula-card-body">
-            <ul class="aula-conteudos"><li>Terna ordenada · sistemas equivalentes</li><li>Método do escalonamento</li><li>Classificação SPD/SPI/SI</li><li>Problemas com 3 incógnitas</li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE2</span><span class="hab em">EM13MAT301</span><span class="hab ae-mat">3EM.MT17</span></div>
-            <div class="prioridade-row"><div class="prio-dot media"></div><span>PRIORIDADE MÉDIA</span><span style="font-size:11px;">Aulas 17 a 28 do 1º Bim</span></div>
-          </div>
-        </div>
-        <div class="aula-card">
-          <div class="aula-card-header mat"><span class="aula-num-badge">BLOCO D · 2 aulas</span><span class="aula-card-title">Análise Combinatória</span></div>
-          <div class="aula-card-body">
-            <ul class="aula-conteudos"><li>Princípio multiplicativo</li><li>Permutação, arranjo, combinação</li><li>Diferença arranjo × combinação</li><li>Problemas integrados</li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE3</span><span class="hab em">EM13MAT310</span><span class="hab ae-mat">3EM.MT23/MT24</span></div>
-            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span><span style="font-size:11px;">Aulas 1 a 8 do 2º Bim</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="semana-block">
-      <div class="semana-header"><span class="semana-pill s3">Semana 3</span><span class="semana-dates">17 a 21 de junho</span><span class="semana-tag">🏁 Probabilidade + Simulado final</span></div>
-      <div class="aula-grid">
-        <div class="aula-card">
-          <div class="aula-card-header mat"><span class="aula-num-badge">BLOCO E · 2 aulas</span><span class="aula-card-title">Probabilidade: eventos e adição</span></div>
-          <div class="aula-card-body">
-            <ul class="aula-conteudos"><li>Espaço amostral, eventos simples</li><li>Eventos complementares</li><li>Adição P(A∪B)</li><li>Probabilidade + Análise Combinatória</li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE4/AE5</span><span class="hab em">EM13MAT311/312</span><span class="hab ae-mat">3EM.MT25/MT26</span></div>
-            <div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span><span style="font-size:11px;">Aulas 9 a 24 do 2º Bim</span></div>
-          </div>
-        </div>
-        <div class="aula-card">
-          <div class="aula-card-header green"><span class="aula-num-badge">BLOCO F · 2 aulas</span><span class="aula-card-title">Probabilidade condicional + Simulado</span></div>
-          <div class="aula-card-body">
-            <ul class="aula-conteudos"><li>Eventos dependentes/independentes</li><li>P(A|B)</li><li>Multiplicação de probabilidades</li><li><strong>Simulado estilo SARESP</strong></li></ul>
-            <div class="habs-row"><span class="hab ae-mat">AE5</span><span class="hab em">EM13MAT312</span><span class="hab ae-mat">3EM.MT27</span></div>
-            <div class="prioridade-row"><div class="prio-dot baixa"></div><span>CONSOLIDAÇÃO</span><span style="font-size:11px;">Aulas 21–28 do 2º Bim</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cobertura-box">
-      <h3>✅ Habilidades cobertas — Matemática</h3>
-      <div class="hab-grid">
-        <div class="hab-item mat-style"><span class="code">3EM.MT05/06/09</span><span class="desc">Equações 1º e 2º grau</span></div>
-        <div class="hab-item mat-style"><span class="code">3EM.MT16/17</span><span class="desc">Sistemas lineares</span></div>
-        <div class="hab-item mat-style"><span class="code">3EM.MT23/24</span><span class="desc">Análise Combinatória</span></div>
-        <div class="hab-item mat-style"><span class="code">3EM.MT25/26/27</span><span class="desc">Probabilidade (adição, condicional)</span></div>
-      </div>
+    <div class="hero-tabs">
+      <button class="htab mat active" onclick="switchTab('mat')">📐 Matemática</button>
+      <button class="htab lp" onclick="switchTab('lp')">📖 Língua Portuguesa</button>
     </div>
   </div>
-
-  <!-- Painel Língua Portuguesa -->
-  <div class="tab-panel" id="tab-lp">
-    <div class="alert red">
-      <span class="alert-icon">📖</span>
-      <span>O SARESP de LP avalia principalmente <strong>leitura e interpretação</strong>. O plano prioriza leitura literária, argumentação, sintaxe e textos jornalísticos.</span>
-    </div>
-
-    <div class="strategy-grid">
-      <div class="strategy-card sc-red"><div class="sc-label">⚡ Urgência</div><div class="sc-title">6 blocos temáticos</div><div class="sc-body">Conteúdos agrupados por eixo de habilidade, alinhados à Prova Paulista.</div></div>
-      <div class="strategy-card sc-gold"><div class="sc-label">🎯 Foco</div><div class="sc-title">Habilidades de leitura e análise</div><div class="sc-body">LP01–LP05 (leitura), LP12–LP18 (argumentação), LP02/LP04 (sintaxe).</div></div>
-      <div class="strategy-card sc-mat"><div class="sc-label">📋 Metodologia</div><div class="sc-title">Textos + Questões estilo SARESP</div><div class="sc-body">Cada bloco parte de um texto-âncora e desenvolve questões das habilidades cobertas.</div></div>
-    </div>
-
-    <div class="cobertura-box">
-      <h3>📅 Cronograma — Língua Portuguesa (3/06 a 21/06)</h3>
-      <table class="crono-table">
-        <thead><tr><th>Semana</th><th>Bloco</th><th>Foco</th><th>Habilidades</th><th>Tipo</th></tr></thead>
-        <tbody>
-          <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco A</strong></td><td>Leitura literária: inferência, intertextualidade</td><td>LP01, LP03, LP07, LP09, LP10</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s1">Sem. 1</td><td><strong>Bloco B</strong></td><td>Sintaxe e coesão · figuras de linguagem</td><td>LP02, LP04, 9EF.LP09, 9EF.LP10</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco C</strong></td><td>Texto argumentativo: tese, argumentos</td><td>LP12–LP18</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s2">Sem. 2</td><td><strong>Bloco D</strong></td><td>Textos jornalísticos: editorial, reportagem</td><td>LP05, LP06, LP11, 9EF.LP01/06</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco E</strong></td><td>Elementos discursivos e modalização</td><td>LP06, LP08, LP09, 9EF.LP07/08</td><td><span class="tipo-badge recomp">recomposição</span></td></tr>
-          <tr><td class="week-cell s3">Sem. 3</td><td><strong>Bloco F</strong></td><td>Simulado geral estilo SARESP</td><td>Todas as habilidades LP</td><td><span class="tipo-badge simulado">simulado</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Blocos LP resumidos (mantendo estrutura visual) -->
-    <div class="semana-block">
-      <div class="semana-header"><span class="semana-pill s1">Semana 1</span><span class="semana-dates">03 a 07 de junho</span><span class="semana-tag">Leitura literária e análise linguística</span></div>
-      <div class="aula-grid">
-        <div class="aula-card"><div class="aula-card-header lp"><span class="aula-num-badge">BLOCO A</span><span class="aula-card-title">Leitura literária: inferência, intertextualidade</span></div><div class="aula-card-body"><ul class="aula-conteudos lp-style"><li>Leitura de trecho literário (conto, poema)</li><li>Inferência, recursos semânticos</li><li>Intertextualidade · contexto histórico</li></ul><div class="habs-row"><span class="hab ae-lp">AE2/AE3/AE8</span><span class="hab em">EM13LP52</span><span class="hab ae-lp">LP01,LP03,LP07,LP09</span></div><div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div></div></div>
-        <div class="aula-card"><div class="aula-card-header lp"><span class="aula-num-badge">BLOCO B</span><span class="aula-card-title">Sintaxe, coesão e figuras de linguagem</span></div><div class="aula-card-body"><ul class="aula-conteudos lp-style"><li>Conjunções, advérbios, conectivos</li><li>Figuras: metonímia, sinestesia, ironia</li><li>Regência verbal e nominal</li></ul><div class="habs-row"><span class="hab ae-lp">AE7</span><span class="hab em">EM13LP08</span><span class="hab ae-lp">LP02,LP04,9EF.LP09</span></div><div class="prioridade-row"><div class="prio-dot alta"></div><span>PRIORIDADE ALTA</span></div></div></div>
-      </div>
-    </div>
-
-    <div class="cobertura-box">
-      <h3>✅ Habilidades cobertas — Língua Portuguesa</h3>
-      <div class="hab-grid">
-        <div class="hab-item lp-style"><span class="code">LP01–LP05</span><span class="desc">Leitura e inferência</span></div>
-        <div class="hab-item lp-style"><span class="code">LP12–LP18</span><span class="desc">Texto argumentativo</span></div>
-        <div class="hab-item lp-style"><span class="code">LP02/LP04</span><span class="desc">Coesão e figuras</span></div>
-        <div class="hab-item lp-style"><span class="code">9EF.LP01/LP06</span><span class="desc">Jornalismo e divulgação científica</span></div>
-      </div>
-    </div>
-
-    <div class="dicas-grid">
-      <div class="dica-card"><h4 style="color:#b71c1c;">💡 Sugestões de condução</h4><ul><li>Use textos curtos seguidos de questões focadas na habilidade</li><li>No Bloco A, prefira autores do Modernismo (Machado, Drummond)</li><li>No Bloco C, trabalhe com editoriais reais</li><li>Sempre peça ao aluno que justifique a resposta apontando o trecho</li></ul></div>
-      <div class="dica-card"><h4 style="color:#dc2626;">⚠️ Pontos de atenção</h4><ul><li>LP15 (tese implícita) é uma das habilidades com maior erro</li><li>LP18 (tipos de argumento) exige exemplos variados</li><li>Conjunções adversativas e conclusivas são as mais cobradas</li></ul></div>
-    </div>
-  </div>
-
-  <footer><i class="fas fa-chalkboard-user"></i> URE Caieiras · Plano de Recomposição SARESP · 3ª Série EM · Cronograma intensivo de 3 semanas</footer>
 </div>
-<button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Imprimir / PDF</button>
+
+<main>
+
+<!-- ══════════════════════ MATEMÁTICA ══════════════════════ -->
+<div class="tab-panel active" id="tab-mat">
+
+  <div class="alert blue">
+    <span class="alert-icon">📐</span>
+    <span>Com apenas 3 semanas, o foco deve ser nos agrupamentos de maior peso no SARESP: <strong>Equações e Sistemas (AE1/AE2)</strong> e <strong>Combinatória + Probabilidade (AE3/AE4/AE5)</strong>.</span>
+  </div>
+
+  <!-- Estratégia -->
+  <div class="strategy-grid">
+    <div class="strategy-card sc-red">
+      <div class="sc-label">⚡ Urgência</div>
+      <div class="sc-title">3 semanas = 6 blocos</div>
+      <div class="sc-body">Cada semana tem 2 blocos de 2 aulas cada. Agrupamos conteúdos afins para maximizar cobertura das habilidades da Prova Paulista.</div>
+    </div>
+    <div class="strategy-card sc-gold">
+      <div class="sc-label">🎯 Foco</div>
+      <div class="sc-title">Habilidades de maior incidência</div>
+      <div class="sc-body">MT05, MT06, MT09, MT17 (equações), MT16, MT17 (sistemas), MT23–MT27 (combinatória e probabilidade).</div>
+    </div>
+    <div class="strategy-card sc-mat">
+      <div class="sc-label">📋 Metodologia</div>
+      <div class="sc-title">Revisão + Resolução de problemas</div>
+      <div class="sc-body">Cada bloco combina revisão conceitual rápida com resolução de problemas do estilo SARESP/Prova Paulista.</div>
+    </div>
+  </div>
+
+  <!-- Cronograma resumido -->
+  <div class="cobertura-box">
+    <h3>📅 Cronograma — Matemática (3/06 a 21/06)</h3>
+    <table class="crono-table">
+      <thead>
+        <tr>
+          <th>Semana</th>
+          <th>Período</th>
+          <th>Bloco</th>
+          <th>Foco / Conteúdo agrupado</th>
+          <th>Habilidades cobertas</th>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="week-cell s1" rowspan="2">Sem. 1</td>
+          <td>03–07/06</td>
+          <td><strong>Bloco A</strong></td>
+          <td class="focus-cell">Equações do 1º e 2º grau · Fórmula de Bhaskara · Problemas cotidianos</td>
+          <td class="habs-cell">3EM.MT05 · MT06 · MT09 · 9EF.MT17</td>
+          <td><span class="tipo-badge recomp">recomposição</span></td>
+        </tr>
+        <tr>
+          <td>03–07/06</td>
+          <td><strong>Bloco B</strong></td>
+          <td class="focus-cell">Sistemas lineares 2×2: substituição, adição e interpretação geométrica</td>
+          <td class="habs-cell">3EM.MT16 · MT17</td>
+          <td><span class="tipo-badge recomp">recomposição</span></td>
+        </tr>
+        <tr>
+          <td class="week-cell s2" rowspan="2">Sem. 2</td>
+          <td>10–14/06</td>
+          <td><strong>Bloco C</strong></td>
+          <td class="focus-cell">Sistemas lineares 3×3: escalonamento, classificação (SPD, SPI, SI) e problemas</td>
+          <td class="habs-cell">3EM.MT17</td>
+          <td><span class="tipo-badge recomp">recomposição</span></td>
+        </tr>
+        <tr>
+          <td>10–14/06</td>
+          <td><strong>Bloco D</strong></td>
+          <td class="focus-cell">Análise Combinatória: Princípio multiplicativo, Permutação, Arranjo e Combinação</td>
+          <td class="habs-cell">3EM.MT23 · MT24</td>
+          <td><span class="tipo-badge recomp">recomposição</span></td>
+        </tr>
+        <tr>
+          <td class="week-cell s3" rowspan="2">Sem. 3</td>
+          <td>17–21/06</td>
+          <td><strong>Bloco E</strong></td>
+          <td class="focus-cell">Probabilidade: espaço amostral, eventos simples, complementares e adição de probabilidades</td>
+          <td class="habs-cell">3EM.MT25 · MT26</td>
+          <td><span class="tipo-badge recomp">recomposição</span></td>
+        </tr>
+        <tr>
+          <td>17–21/06</td>
+          <td><strong>Bloco F</strong></td>
+          <td class="focus-cell">Probabilidade condicional · Multiplicação de probabilidades · Simulado geral</td>
+          <td class="habs-cell">3EM.MT27</td>
+          <td><span class="tipo-badge simulado">simulado</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SEMANA 1 -->
+  <div class="semana-block">
+    <div class="semana-header">
+      <span class="semana-pill s1">Semana 1</span>
+      <span class="semana-dates">03 a 07 de junho</span>
+      <span class="semana-tag">⚡ Prioridade máxima — Equações e Sistemas 2×2</span>
+      <div class="semana-line"></div>
+    </div>
+    <div class="aula-grid">
+
+      <div class="aula-card">
+        <div class="aula-card-header mat">
+          <span class="aula-num-badge">BLOCO A · 2 aulas</span>
+          <span class="aula-card-title">Equações polinomiais do 1º e 2º grau</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos">
+            <li>Equação do 1º grau: ax+b=c · propriedade da igualdade</li>
+            <li>Equação do 2º grau incompleta: ax²=b (radiciação)</li>
+            <li>Fórmula de Bhaskara · discriminante Δ</li>
+            <li>Problemas cotidianos modelados por equações</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-mat">AE1</span>
+            <span class="hab ef">EF07MA18</span>
+            <span class="hab ef">EF09MA09</span>
+            <span class="hab em">EM13MAT302</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-mat">3EM.MT05</span>
+            <span class="hab ae-mat">3EM.MT06</span>
+            <span class="hab ae-mat">3EM.MT09</span>
+            <span class="hab ae-mat">9EF.MT17</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot alta"></div>
+            <span class="prio-label">PRIORIDADE ALTA</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 1 a 8 do 1º Bim — agrupadas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aula-card">
+        <div class="aula-card-header mat">
+          <span class="aula-num-badge">BLOCO B · 2 aulas</span>
+          <span class="aula-card-title">Sistemas lineares 2×2: métodos e geometria</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos">
+            <li>Método da substituição e método da adição</li>
+            <li>Representação no plano cartesiano</li>
+            <li>Classificação: SPD, SPI e SI (2 equações)</li>
+            <li>Problemas cotidianos com sistemas 2×2</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-mat">AE2</span>
+            <span class="hab em">EM13MAT301</span>
+            <span class="hab ef">EF08MA08</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-mat">3EM.MT16</span>
+            <span class="hab ae-mat">3EM.MT17</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot alta"></div>
+            <span class="prio-label">PRIORIDADE ALTA</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 9 a 16 do 1º Bim — agrupadas</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEMANA 2 -->
+  <div class="semana-block">
+    <div class="semana-header">
+      <span class="semana-pill s2">Semana 2</span>
+      <span class="semana-dates">10 a 14 de junho</span>
+      <span class="semana-tag">Sistemas 3×3 e Análise Combinatória</span>
+      <div class="semana-line"></div>
+    </div>
+    <div class="aula-grid">
+
+      <div class="aula-card">
+        <div class="aula-card-header gold">
+          <span class="aula-num-badge">BLOCO C · 2 aulas</span>
+          <span class="aula-card-title">Sistemas 3×3: escalonamento e classificação</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos">
+            <li>Terna ordenada · sistemas equivalentes</li>
+            <li>Método do escalonamento (forma escalonada)</li>
+            <li>Classificação SPD / SPI / SI para 3 equações</li>
+            <li>Problemas aplicados com 3 incógnitas</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-mat">AE2</span>
+            <span class="hab em">EM13MAT301</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-mat">3EM.MT17</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot media"></div>
+            <span class="prio-label">PRIORIDADE MÉDIA</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 17 a 28 do 1º Bim — agrupadas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aula-card">
+        <div class="aula-card-header mat">
+          <span class="aula-num-badge">BLOCO D · 2 aulas</span>
+          <span class="aula-card-title">Análise Combinatória: PC, Permutação, Arranjo e Combinação</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos">
+            <li>Princípio multiplicativo da contagem</li>
+            <li>Permutação simples e fatorial de n</li>
+            <li>Arranjo simples: A(n,p)</li>
+            <li>Combinação simples C(n,p) · diferença arranjo × combinação</li>
+            <li>Problemas integrados envolvendo os três tipos</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-mat">AE3</span>
+            <span class="hab em">EM13MAT310</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-mat">3EM.MT23</span>
+            <span class="hab ae-mat">3EM.MT24</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot alta"></div>
+            <span class="prio-label">PRIORIDADE ALTA</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 1 a 8 do 2º Bim — agrupadas</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEMANA 3 -->
+  <div class="semana-block">
+    <div class="semana-header">
+      <span class="semana-pill s3">Semana 3</span>
+      <span class="semana-dates">17 a 21 de junho</span>
+      <span class="semana-tag">🏁 Probabilidade + Simulado final</span>
+      <div class="semana-line"></div>
+    </div>
+    <div class="aula-grid">
+
+      <div class="aula-card">
+        <div class="aula-card-header mat">
+          <span class="aula-num-badge">BLOCO E · 2 aulas</span>
+          <span class="aula-card-title">Probabilidade: espaço amostral, eventos e adição</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos">
+            <li>Experimentos aleatórios · espaço amostral · eventos</li>
+            <li>Probabilidade de evento simples (fração/decimal/%)</li>
+            <li>Eventos impossíveis, certos e complementares</li>
+            <li>Adição de probabilidades: P(A∪B)</li>
+            <li>Probabilidade com Análise Combinatória</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-mat">AE4</span>
+            <span class="hab ae-mat">AE5</span>
+            <span class="hab em">EM13MAT311</span>
+            <span class="hab em">EM13MAT312</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-mat">3EM.MT25</span>
+            <span class="hab ae-mat">3EM.MT26</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot alta"></div>
+            <span class="prio-label">PRIORIDADE ALTA</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 9 a 24 do 2º Bim — agrupadas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aula-card">
+        <div class="aula-card-header green">
+          <span class="aula-num-badge">BLOCO F · 2 aulas</span>
+          <span class="aula-card-title">Probabilidade condicional + Simulado geral</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos">
+            <li>Eventos dependentes × independentes</li>
+            <li>Probabilidade condicional: P(A|B)</li>
+            <li>Multiplicação de probabilidades em eventos sucessivos</li>
+            <li><strong>Simulado estilo SARESP:</strong> questões de todos os blocos</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-mat">AE5</span>
+            <span class="hab em">EM13MAT312</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-mat">3EM.MT27</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot baixa"></div>
+            <span class="prio-label">CONSOLIDAÇÃO</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 21–28 do 2º Bim + revisão geral</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cobertura de habilidades -->
+  <div class="cobertura-box">
+    <h3>✅ Habilidades da Prova Paulista cobertas pelo plano — Matemática</h3>
+    <div class="hab-grid">
+      <div class="hab-item mat-style"><span class="code">3EM.MT05</span><span class="desc">Equação polinomial 1º grau</span></div>
+      <div class="hab-item mat-style"><span class="code">3EM.MT06</span><span class="desc">Problemas com equação 1º grau</span></div>
+      <div class="hab-item mat-style"><span class="code">9EF.MT17</span><span class="desc">Equação polinomial 2º grau</span></div>
+      <div class="hab-item mat-style"><span class="code">3EM.MT09</span><span class="desc">Problemas com equação 2º grau</span></div>
+      <div class="hab-item mat-style"><span class="code">3EM.MT16</span><span class="desc">Sistemas lineares — repr. geométrica</span></div>
+      <div class="hab-item mat-style"><span class="code">3EM.MT17</span><span class="desc">Sistemas lineares até 3 incógnitas</span></div>
+      <div class="hab-item mat-style"><span class="code">3EM.MT23</span><span class="desc">Contagem: princípio multiplicativo / permutação</span></div>
+      <div class="hab-item mat-style"><span class="code">3EM.MT24</span><span class="desc">Permutação, arranjo e combinação</span></div>
+      <div class="hab-item mat-style"><span class="code">3EM.MT25</span><span class="desc">Probabilidade de eventos simples</span></div>
+      <div class="hab-item mat-style"><span class="code">3EM.MT26</span><span class="desc">Probabilidade: eventos independentes e sucessivos</span></div>
+      <div class="hab-item mat-style"><span class="code">3EM.MT27</span><span class="desc">Probabilidade condicional (dependentes/sucessivos)</span></div>
+    </div>
+  </div>
+
+  <!-- Dicas pedagógicas -->
+  <div class="dicas-grid">
+    <div class="dica-card">
+      <h4 style="color:var(--mat);">💡 Sugestões de condução</h4>
+      <ul>
+        <li>Inicie cada bloco com uma questão diagnóstica rápida (5 min)</li>
+        <li>Use questões reais do SARESP e Prova Paulista dos últimos anos</li>
+        <li>Alterne exposição com resolução guiada e resolução autônoma</li>
+        <li>Priorize problemas contextualizados em vez de cálculo puro</li>
+      </ul>
+    </div>
+    <div class="dica-card">
+      <h4 style="color:var(--urgent);">⚠️ Pontos de atenção</h4>
+      <ul>
+        <li>No Bloco D: distinguir quando usar arranjo vs combinação é o maior erro dos alunos</li>
+        <li>No Bloco E/F: enfatizar o conceito de "sem reposição" (eventos dependentes)</li>
+        <li>Sistemas: treinar a identificação rápida do método mais eficiente para cada problema</li>
+        <li>Bhaskara: reforçar o cálculo do discriminante Δ e interpretação das raízes</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /tab-mat -->
+
+
+<!-- ══════════════════════ LÍNGUA PORTUGUESA ══════════════════════ -->
+<div class="tab-panel" id="tab-lp">
+
+  <div class="alert red">
+    <span class="alert-icon">📖</span>
+    <span>O SARESP de LP avalia principalmente <strong>leitura e interpretação</strong>. O plano prioriza os agrupamentos de maior peso: leitura literária, argumentação, sintaxe e textos jornalísticos.</span>
+  </div>
+
+  <!-- Estratégia LP -->
+  <div class="strategy-grid">
+    <div class="strategy-card sc-red">
+      <div class="sc-label">⚡ Urgência</div>
+      <div class="sc-title">6 blocos temáticos</div>
+      <div class="sc-body">Conteúdos agrupados por eixo de habilidade. Cada bloco cobre múltiplas aulas do escopo com o mesmo eixo avaliativo do SARESP.</div>
+    </div>
+    <div class="strategy-card sc-gold">
+      <div class="sc-label">🎯 Foco</div>
+      <div class="sc-title">Habilidades de leitura e análise</div>
+      <div class="sc-body">LP01–LP05 (leitura), LP12–LP18 (argumentação), LP02/LP04 (sintaxe/coesão), LP07/LP10 (literatura).</div>
+    </div>
+    <div class="strategy-card sc-red">
+      <div class="sc-label">📋 Metodologia</div>
+      <div class="sc-title">Textos + Questões estilo SARESP</div>
+      <div class="sc-body">Cada bloco parte de um texto-âncora (literário ou jornalístico) e desenvolve questões das habilidades cobertas.</div>
+    </div>
+  </div>
+
+  <!-- Cronograma LP -->
+  <div class="cobertura-box">
+    <h3>📅 Cronograma — Língua Portuguesa (3/06 a 21/06)</h3>
+    <table class="crono-table">
+      <thead>
+        <tr>
+          <th>Semana</th>
+          <th>Período</th>
+          <th>Bloco</th>
+          <th>Foco / Eixo temático</th>
+          <th>Habilidades cobertas</th>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="week-cell s1" rowspan="2">Sem. 1</td>
+          <td>03–07/06</td>
+          <td><strong>Bloco A</strong></td>
+          <td class="focus-cell">Leitura literária: texto e contexto · Inferência · Intertextualidade</td>
+          <td class="habs-cell">LP01 · LP03 · LP07 · LP09 · LP10</td>
+          <td><span class="tipo-badge recomp">recomposição</span></td>
+        </tr>
+        <tr>
+          <td>03–07/06</td>
+          <td><strong>Bloco B</strong></td>
+          <td class="focus-cell">Sintaxe e coesão: morfossintaxe, conjunções, regência e figuras de linguagem</td>
+          <td class="habs-cell">LP02 · LP04 · 9EF.LP09 · 9EF.LP10</td>
+          <td><span class="tipo-badge recomp">recomposição</span></td>
+        </tr>
+        <tr>
+          <td class="week-cell s2" rowspan="2">Sem. 2</td>
+          <td>10–14/06</td>
+          <td><strong>Bloco C</strong></td>
+          <td class="focus-cell">Texto argumentativo: artigo de opinião, tese, argumentos e refutação</td>
+          <td class="habs-cell">LP12 · LP13 · LP14 · LP15 · LP16 · LP17 · LP18</td>
+          <td><span class="tipo-badge recomp">recomposição</span></td>
+        </tr>
+        <tr>
+          <td>10–14/06</td>
+          <td><strong>Bloco D</strong></td>
+          <td class="focus-cell">Textos jornalísticos: editorial, reportagem, notícia e curadoria de fontes</td>
+          <td class="habs-cell">LP05 · LP06 · LP11 · 9EF.LP01 · 9EF.LP06</td>
+          <td><span class="tipo-badge recomp">recomposição</span></td>
+        </tr>
+        <tr>
+          <td class="week-cell s3" rowspan="2">Sem. 3</td>
+          <td>17–21/06</td>
+          <td><strong>Bloco E</strong></td>
+          <td class="focus-cell">Elementos discursivos e modalização: locutor, interlocutor, paráfrase, pressupostos</td>
+          <td class="habs-cell">LP06 · LP08 · LP09 · 9EF.LP07 · 9EF.LP08</td>
+          <td><span class="tipo-badge recomp">recomposição</span></td>
+        </tr>
+        <tr>
+          <td>17–21/06</td>
+          <td><strong>Bloco F</strong></td>
+          <td class="focus-cell">Simulado geral: questões estilo SARESP integrando todos os eixos</td>
+          <td class="habs-cell">Todas as habilidades LP</td>
+          <td><span class="tipo-badge simulado">simulado</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SEMANA 1 LP -->
+  <div class="semana-block">
+    <div class="semana-header">
+      <span class="semana-pill s1">Semana 1</span>
+      <span class="semana-dates">03 a 07 de junho</span>
+      <span class="semana-tag">⚡ Leitura literária e análise linguística</span>
+      <div class="semana-line"></div>
+    </div>
+    <div class="aula-grid">
+
+      <div class="aula-card">
+        <div class="aula-card-header lp">
+          <span class="aula-num-badge">BLOCO A · 2 aulas</span>
+          <span class="aula-card-title">Leitura literária: inferência, intertextualidade e contexto</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos lp-style">
+            <li>Leitura de trecho literário (conto, poema ou romance modernista)</li>
+            <li>Inferir sentido de palavras e expressões no contexto</li>
+            <li>Reconhecer recursos semânticos: sinônimos, metáforas, figuras</li>
+            <li>Identificar intertextualidade e interdiscursividade</li>
+            <li>Relacionar texto ao contexto histórico-social de produção</li>
+            <li>Inferir valores culturais e visões de mundo</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-lp">AE2</span>
+            <span class="hab ae-lp">AE3</span>
+            <span class="hab ae-lp">AE8</span>
+            <span class="hab em">EM13LP52</span>
+            <span class="hab em">EM13LP50</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-lp">LP01</span>
+            <span class="hab ae-lp">LP03</span>
+            <span class="hab ae-lp">LP07</span>
+            <span class="hab ae-lp">LP09</span>
+            <span class="hab ae-lp">9EF.LP07</span>
+            <span class="hab ae-lp">9EF.LP10</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot alta"></div>
+            <span class="prio-label">PRIORIDADE ALTA</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 1–2 e 11–24 do 1º Bim · Aulas 11–19 do 2º Bim</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aula-card">
+        <div class="aula-card-header lp">
+          <span class="aula-num-badge">BLOCO B · 2 aulas</span>
+          <span class="aula-card-title">Análise linguística: morfossintaxe, coesão e figuras</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos lp-style">
+            <li>Efeitos de sentido de recursos ortográficos e morfossintáticos</li>
+            <li>Relações lógico-discursivas: conjunções, advérbios, conectivos</li>
+            <li>Figuras de linguagem: metonímia, sinestesia, personificação, ironia</li>
+            <li>Orações coordenadas e subordinadas: efeitos no texto</li>
+            <li>Regência verbal e nominal · paralelismo sintático</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-lp">AE7</span>
+            <span class="hab em">EM13LP08</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-lp">LP02</span>
+            <span class="hab ae-lp">LP04</span>
+            <span class="hab ae-lp">9EF.LP09</span>
+            <span class="hab ae-lp">9EF.LP10</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot alta"></div>
+            <span class="prio-label">PRIORIDADE ALTA</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 8, 10, 14, 26, 28 do 1º Bim · Aulas 2, 4, 6 do 2º Bim</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEMANA 2 LP -->
+  <div class="semana-block">
+    <div class="semana-header">
+      <span class="semana-pill s2">Semana 2</span>
+      <span class="semana-dates">10 a 14 de junho</span>
+      <span class="semana-tag">Textos argumentativos e jornalísticos</span>
+      <div class="semana-line"></div>
+    </div>
+    <div class="aula-grid">
+
+      <div class="aula-card">
+        <div class="aula-card-header lp">
+          <span class="aula-num-badge">BLOCO C · 2 aulas</span>
+          <span class="aula-card-title">Texto argumentativo: tese, argumentos e modalização</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos lp-style">
+            <li>Reconhecer elementos do artigo de opinião</li>
+            <li>Identificar tese (explícita e implícita) e argumentos</li>
+            <li>Classificar tipos de argumento: autoridade, evidência, exemplificação, comparação, causa/consequência</li>
+            <li>Estratégias de convencimento e movimentos argumentativos (sustentação, refutação, negociação)</li>
+            <li>Modalização textual: marcas de certeza, dúvida e opinião</li>
+            <li>Distinguir fato de opinião</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-lp">AE4</span>
+            <span class="hab em">EM13LP05</span>
+            <span class="hab em">EM13LP02C</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-lp">LP12</span>
+            <span class="hab ae-lp">LP13</span>
+            <span class="hab ae-lp">LP14</span>
+            <span class="hab ae-lp">LP15</span>
+            <span class="hab ae-lp">LP16</span>
+            <span class="hab ae-lp">LP17</span>
+            <span class="hab ae-lp">LP18</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot alta"></div>
+            <span class="prio-label">PRIORIDADE ALTA</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 4–5 do 1º Bim · Aulas 3, 5 do 2º Bim</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aula-card">
+        <div class="aula-card-header gold">
+          <span class="aula-num-badge">BLOCO D · 2 aulas</span>
+          <span class="aula-card-title">Textos jornalísticos, divulgação científica e curadoria</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos lp-style">
+            <li>Identificar fato central e circunstâncias em notícias e reportagens</li>
+            <li>Reconhecer elementos do gênero editorial e reportagem</li>
+            <li>Identificar finalidade de texto de divulgação científica</li>
+            <li>Avaliar confiabilidade e fidedignidade de fontes</li>
+            <li>Analisar marcas de parcialidade/imparcialidade</li>
+            <li>Inferir público-alvo e objetivos do enunciador</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-lp">AE5</span>
+            <span class="hab ae-lp">AE6</span>
+            <span class="hab em">EM13LP42</span>
+            <span class="hab em">EM13LP36</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-lp">LP05</span>
+            <span class="hab ae-lp">LP06</span>
+            <span class="hab ae-lp">LP11</span>
+            <span class="hab ae-lp">LP13</span>
+            <span class="hab ae-lp">9EF.LP01</span>
+            <span class="hab ae-lp">9EF.LP06</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot media"></div>
+            <span class="prio-label">PRIORIDADE MÉDIA</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 6–9 e 25–27 do 1º Bim · Aulas 20–23 do 2º Bim</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEMANA 3 LP -->
+  <div class="semana-block">
+    <div class="semana-header">
+      <span class="semana-pill s3">Semana 3</span>
+      <span class="semana-dates">17 a 21 de junho</span>
+      <span class="semana-tag">🏁 Discurso, modalização + Simulado final</span>
+      <div class="semana-line"></div>
+    </div>
+    <div class="aula-grid">
+
+      <div class="aula-card">
+        <div class="aula-card-header lp">
+          <span class="aula-num-badge">BLOCO E · 2 aulas</span>
+          <span class="aula-card-title">Elementos discursivos: locutor, paráfrase e pressupostos</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos lp-style">
+            <li>Marcas linguísticas que evidenciam locutor e interlocutor</li>
+            <li>Paráfrases, citações e discurso direto/indireto/indireto livre</li>
+            <li>Inferir informações pressupostas ou subentendidas</li>
+            <li>Variedades linguísticas: norma-padrão e preconceito linguístico</li>
+            <li>Valores culturais e humanos inferidos em textos literários</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-lp">AE10</span>
+            <span class="hab em">EM13LP10</span>
+            <span class="hab em">EM13LP52</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-lp">LP06</span>
+            <span class="hab ae-lp">LP08</span>
+            <span class="hab ae-lp">LP09</span>
+            <span class="hab ae-lp">9EF.LP07</span>
+            <span class="hab ae-lp">9EF.LP08</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot media"></div>
+            <span class="prio-label">PRIORIDADE MÉDIA</span>
+            <span style="font-size:11px;color:var(--muted);">Aulas 7–8 do 2º Bim · Aulas 17–24 do 1º Bim</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aula-card">
+        <div class="aula-card-header green">
+          <span class="aula-num-badge">BLOCO F · 2 aulas</span>
+          <span class="aula-card-title">Simulado geral estilo SARESP</span>
+        </div>
+        <div class="aula-card-body">
+          <ul class="aula-conteudos lp-style">
+            <li><strong>Parte 1 (1 aula):</strong> Questões de leitura literária + análise linguística (Blocos A e B)</li>
+            <li><strong>Parte 2 (1 aula):</strong> Questões argumentativas + jornalísticas + discursivas (Blocos C, D e E)</li>
+            <li>Correção comentada com foco nas habilidades mais erradas</li>
+            <li>Estratégias de leitura rápida para questões dissertativas e objetivas</li>
+          </ul>
+          <div class="habs-row">
+            <span class="hab ae-lp">Todas as AEs LP</span>
+          </div>
+          <div class="habs-row">
+            <span class="hab ae-lp">LP01 ao LP18</span>
+            <span class="hab ae-lp">9EF.LP01</span>
+            <span class="hab ae-lp">9EF.LP05–LP10</span>
+          </div>
+          <div class="prioridade-row">
+            <div class="prio-dot baixa"></div>
+            <span class="prio-label">CONSOLIDAÇÃO</span>
+            <span style="font-size:11px;color:var(--muted);">Revisão integradora de todo o escopo LP</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cobertura habilidades LP -->
+  <div class="cobertura-box">
+    <h3>✅ Habilidades da Prova Paulista cobertas pelo plano — Língua Portuguesa</h3>
+    <div class="hab-grid">
+      <div class="hab-item lp-style"><span class="code">3EM.LP01</span><span class="desc">Inferir sentido de palavra ou expressão</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP02</span><span class="desc">Efeito de recursos ortográficos/morfossintáticos</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP03</span><span class="desc">Recursos semânticos expressivos</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP04</span><span class="desc">Relações lógico-discursivas (conjunções etc.)</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP05</span><span class="desc">Público-alvo e objetivos do enunciador</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP06</span><span class="desc">Marcas linguísticas: locutor e interlocutor</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP07</span><span class="desc">Intertextualidade e interdiscursividade</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP08</span><span class="desc">Paráfrase, citação, discurso direto/indireto</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP09</span><span class="desc">Informação pressuposta/subentendida</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP10</span><span class="desc">Elementos constitutivos do texto literário</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP11</span><span class="desc">Finalidade do texto de divulgação científica</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP12</span><span class="desc">Elementos do artigo de opinião</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP13</span><span class="desc">Marcas de parcialidade em textos jornalísticos</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP14</span><span class="desc">Operadores discursivos e persuasão</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP15</span><span class="desc">Inferir tese do texto argumentativo</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP16</span><span class="desc">Componentes do texto argumentativo</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP17</span><span class="desc">Estratégias de convencimento</span></div>
+      <div class="hab-item lp-style"><span class="code">3EM.LP18</span><span class="desc">Tipos de argumentos (autoridade, evidência etc.)</span></div>
+      <div class="hab-item lp-style"><span class="code">9EF.LP01</span><span class="desc">Fato central em notícia/reportagem</span></div>
+      <div class="hab-item lp-style"><span class="code">9EF.LP07</span><span class="desc">Valores em textos literários</span></div>
+      <div class="hab-item lp-style"><span class="code">9EF.LP08</span><span class="desc">Variedades linguísticas e norma-padrão</span></div>
+      <div class="hab-item lp-style"><span class="code">9EF.LP09</span><span class="desc">Coesão sequencial: conjunções/articuladores</span></div>
+      <div class="hab-item lp-style"><span class="code">9EF.LP10</span><span class="desc">Figuras de linguagem: metáfora, ironia etc.</span></div>
+    </div>
+  </div>
+
+  <!-- Dicas LP -->
+  <div class="dicas-grid">
+    <div class="dica-card">
+      <h4 style="color:var(--lp);">💡 Sugestões de condução</h4>
+      <ul>
+        <li>Use textos curtos (1–2 parágrafos) seguidos de questões focadas na habilidade do bloco</li>
+        <li>No Bloco A, prefira autores do Modernismo (Machado, Drummond, Guimarães Rosa) — alta incidência no SARESP</li>
+        <li>No Bloco C, trabalhe com editoriais reais de jornais para tornar a análise concreta</li>
+        <li>Sempre peça ao aluno que justifique a resposta apontando o trecho do texto</li>
+      </ul>
+    </div>
+    <div class="dica-card">
+      <h4 style="color:var(--urgent);">⚠️ Pontos de atenção</h4>
+      <ul>
+        <li>LP15 (inferir tese implícita) é uma das habilidades com maior taxa de erro — dedique tempo extra</li>
+        <li>LP18 (tipos de argumento) exige exemplos variados para os alunos internalizarem as diferenças</li>
+        <li>9EF.LP09 e LP04 andam juntas — conjunções adversativas e conclusivas são as mais cobradas</li>
+        <li>Para LP03, explore as figuras de linguagem sempre a partir do contexto, nunca isoladas</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /tab-lp -->
+
+</main>
+
+<button class="print-btn" onclick="window.print()">🖨️ Imprimir / PDF</button>
 
 <script>
 function switchTab(tab) {
-  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+  document.querySelectorAll('.htab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + tab).classList.add('active');
-  if (tab === 'mat') document.querySelector('.tab-btn:first-child').classList.add('active');
-  else document.querySelector('.tab-btn:last-child').classList.add('active');
+  document.querySelector('.htab.' + tab).classList.add('active');
 }
 </script>
 </body>
